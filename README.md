@@ -18,12 +18,10 @@ Dependencies (software)
 
 Dependenceis (data)
 -------------------
-* the state download csv files from OpenAddress found under the "U.S. addresses (list of states by region)" [here](http://results.openaddresses.io/)
+* the state download csv files from OpenAddress found under the [U.S. addresses (list of states by region)](http://results.openaddresses.io/).  NOTE: this script requires a directory structure of all state sub folders to be in one folder.  e.g. us=> al, us=>ak ... 
 
-NOTE: this script requires a directory structure of all state sub folders to be in one folder.  e.g. us=> al, us=>ak ... 
-
-* the nationwide zip code tabulation areas shapefile loaded as a table in postgis from US Census found [here] (ftp://ftp2.census.gov/geo/tiger/TIGER2015/ZCTA5/)
-* the individual state place shapefiles loaded as statewide tables in postgis from the US Census found [here](ftp://ftp2.census.gov/geo/tiger/TIGER2015/PLACE/)
+* the nationwide zip code tabulation areas loaded as a table in postgis from [US Census ZCTA TIGER shapefiles](ftp://ftp2.census.gov/geo/tiger/TIGER2015/ZCTA5/).
+* the individual state place shapefiles loaded as statewide tables in postgis from the [US Census  Place TIGER shapefile](ftp://ftp2.census.gov/geo/tiger/TIGER2015/PLACE/).
 
 Example output
 --------------
@@ -33,6 +31,8 @@ Example output
 Issues
 ------
 * the code is single threaded and quite slow, given that it touches every row in large-ish tables several inddependent times
+* the data is no longer ***pure*** in the sense that rows have been updated with external sources.  ZCTAs are not exact, but they are an excellent open data surrograte.
+* no row level metada for postprocess happens yet, but it could easily be enhanced that way
 
 
 Future Enhancements
